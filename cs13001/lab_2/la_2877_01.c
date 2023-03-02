@@ -28,7 +28,7 @@ if ((date_today-date_birth)<0)
 cal_month=((month_today-month_birth)+12%12)-1;
 }
 else {
-cal_month=((month_today-month_birth)+12%12);;
+cal_month=((month_today-month_birth)+12%12);
 }
 	if ((month_today-month_birth)<0)
 		{
