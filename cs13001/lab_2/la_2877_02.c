@@ -1,19 +1,23 @@
-#include<stdio.h>
-
-int main()
+// wap to print leap year or not
+#include <stdio.h>
+void main()
 {
-int year;
-printf("Enter Year:\n");
-scanf("%d",&year);
-
-if((year/4)==0)
-{
-printf("The Year %d is Leap Year\n",year);
-}
-else {
-	printf("The Year %d is not Leap Year\n",year);
+     int year = 0;
+     printf("Enter the year\n");
+     scanf("%d", &year);
+     if (year % 4 == 0)
+     {
+          if (year % 100 == 0 && year % 400 != 0)
+          {
+               printf("Year %d is not a leap year\n", year);
+          }
+          else
+          {
+               printf("Year %d is a leap year\n", year);
+          }
      }
-
-
-return 0;
+     else
+     {
+          printf("Year %d is not a leap year\n", year);
+     }
 }
