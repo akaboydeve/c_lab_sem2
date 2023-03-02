@@ -1,46 +1,44 @@
 #include<stdio.h>
-
 int main()
 {
-int amount=0;
-int deducted=0;
-float tax=0.0;
-int claim=1;
-printf("Enter The Amount:\n");
-scanf("%d",&amount);
-
-printf("Do You want to Claim 80C - 1,50,000 \n Enter 1 For Yes or 0 For No");
+int sal;
+printf("enter your salary=\n.");
+scanf("%d",&sal);
+int in_hand;
+in_hand=(sal-700000);
+printf("after standard deduction your salary is=%d\n.",in_hand);
+printf(" press 1 to claim and 0 to unclaim \n");
+int claim;
+printf("select 1 or 0=\n");
 scanf("%d",&claim);
-
-if((claim == 1))
+if (claim==1)
 {
-deducted= amount-(700000+150000);
+ in_hand=in_hand-150000;
+ printf("you have claimed the 80C and your final salary is = (%d)",(in_hand));
 }
-else if(claim == 0)
+else
 {
-deducted= amount-(700000);
+ printf("you have not claimed the 80C.\n");
 }
-
-if((amount<1200000)&&(amount>100000))
+if (in_hand<=500000)
 {
-tax = deducted - (deducted *(15/100));
+printf("your tax is= %d\n",(in_hand*5)/100);
 }
-else if((amount<=1000000)&&(amount>700000))
+else if (in_hand<=700000)
 {
-tax = deducted - (deducted *(12.5/100));
+printf("your tax is= %d\n",(in_hand*10)/100);
 }
-else if((amount<=700000)&&(amount>500000))
+else if (in_hand<=1000000)
 {
-tax = deducted - (deducted *(10/100));
+printf("your tax is= %f\n", (in_hand*12.5)/100);
 }
-else if((amount<=500000))
+else if (in_hand>=1200000)
 {
-tax = deducted - (deducted *(5/100));
+printf("your tax is= %d\n",(in_hand*15)/100);
+}  
+else 
+{
+printf("salary not taxasable.\n");
 }
-
-
-
-printf("Tax is %f\n",tax);
-
 return 0;
 }
