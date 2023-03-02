@@ -24,8 +24,8 @@ int main()
 
 	if ((date_today - date_birth) < 0)
 	{
-		cal_date = (date_today - date_birth) + 30 % 30;
-		month_birth--;
+		cal_date = (date_today-date_birth % 30)+30;
+		month_birth= month_birth - 1;
 	}
 	else
 	{
@@ -33,7 +33,7 @@ int main()
 	}
 	if ((month_today - month_birth) < 0)
 	{
-		cal_month = ((month_today - month_birth) + 12 % 12);
+		cal_month =(month_today - month_birth % 12)+12;
 		cal_year = (year_today - year_birth) - 1;
 	}
 	else
