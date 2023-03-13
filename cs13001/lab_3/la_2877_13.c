@@ -2,31 +2,35 @@
 
 int main()
 {
-  int i, j, k, l, m, n, is_prime;
-  printf("Enter The Number\n");
+  int i, j, k, n;
+  printf("Enter the number of rows: ");
   scanf("%d", &n);
 
   for (i = 1; i <= n; i++)
   {
-    m = 0;
-    for (j = 2; j <= n; j++)
-    {
-      is_prime = 1;
+    k = 2;
 
-      for (k = 2; k < j; k++)
+    for (j = 1; j <= i; j++)
+    {
+      while (1)
       {
-        if (j % k == 0)
+        int is_prime = 1;
+        for (int l = 2; l < k; l++)
         {
-          is_prime = 0;
-          m++;
+          if (k % l == 0)
+          {
+            is_prime = 0;
+            break;
+          }
+        }
+        if (is_prime)
+        {
+          printf("%d\t", k);
           break;
         }
+        k++;
       }
-
-      if ((is_prime == 1) && (m < j))
-      {
-        printf("%d\t", k);
-      }
+      k++;
     }
     printf("\n");
   }
