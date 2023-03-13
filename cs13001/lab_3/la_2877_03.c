@@ -1,4 +1,4 @@
-//decimal to biniary
+// decimal to biniary
 #include <stdio.h>
 int main()
 {
@@ -8,11 +8,11 @@ int main()
     scanf("%d", &num);
 
     printf("\nBinary equivalent of %d is ", num);
-    while(num)
+    while (num)
     {
-        rem   = num % 2;
-        num   = num / 2;
-        bin   = bin + (rem * place);
+        rem = num % 2;
+        num = num / 2;
+        bin = bin + (rem * place);
         place = place * 10;
     }
     printf("%d\n", bin);
